@@ -6,7 +6,10 @@ const c = 100
 console.log(a, b, c)
 //c = 200 
 
-// let v;
+let v;
+console.log(v)
 
-// console.log(v)
+a = 10
+console.log(a)
+
 
