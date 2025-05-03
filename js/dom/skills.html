@@ -1,14 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Skills</title>
     <script>
-        var skills = [] 
+        var skills = []
 
         function addSkill() {
             var txtSkill = document.getElementById("txtSkill")
+            //Check whether skill is already present 
+            if (skills.includes(txtSkill.value)) {
+                alert("Duplicate Skill!")
+                return
+            }
+
             skills.push(txtSkill.value)
             console.log(skills)
             showSkills()
@@ -16,16 +23,19 @@
 
         function showSkills() {
             var output = ""
-            for(let skill of skills) {
-                 output += `<li>${skill}</li>`
+            for (let skill of skills) {
+                output += `<li>${skill}</li>`
             }
-            document.getElementById("ulSkills").innerHTML = output 
+            document.getElementById("ulSkills").innerHTML = output
+            document.getElementById("count").innerHTML = `Count : ${skills.length}`
+
         }
     </script>
 </head>
+
 <body>
     <h1>Skills</h1>
-    <hr/>
+    <hr />
     Skill : <input type="text" id="txtSkill" />
     <button onClick="addSkill()">Add</button>
 
@@ -33,6 +43,9 @@
     <ul id="ulSkills">
 
     </ul>
-    
+    <p></p>
+    <h4 id="count"></h4>
+
 </body>
+
 </html>
