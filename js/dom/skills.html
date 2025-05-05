@@ -8,10 +8,19 @@
     <script>
         var skills = []
 
+        function isExisting(skill) {
+            for (let s of skills) {
+              if (s.toUpperCase() == skill.toUpperCase())
+                    return true // skill is existing 
+            }
+
+            return false  // Skill not existing 
+        }
+
         function addSkill() {
             var txtSkill = document.getElementById("txtSkill")
             //Check whether skill is already present 
-            if (skills.includes(txtSkill.value)) {
+            if (isExisting(txtSkill.value)) {
                 alert("Duplicate Skill!")
                 return
             }
