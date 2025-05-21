@@ -5,14 +5,14 @@ const port = 3000
 app.set('view engine', 'ejs')
 app.set('views','./templates')
 
-app.get('/contact',
+app.get('/jobs',
     (req, res) => {
-         res.render('contact',
+         res.render('job',
               { 
-                email : 'info@srikanthtechnologies.com',
-                mobile : '905905700'
+                title : 'Front-end Developer',
+                skills : ['HTML', 'BOOTSTRAP', 'REACT']
               }
-         )  // ./templates/contact.ejs 
+         )  // ./templates/jobs.ejs 
     }
 )
  
