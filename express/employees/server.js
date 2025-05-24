@@ -124,7 +124,6 @@ app.get('/edit/:empid',
       if (con)
         await con.end()
     }
-
   }
 )
 
