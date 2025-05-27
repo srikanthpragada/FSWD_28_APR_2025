@@ -2,12 +2,19 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
 import reportWebVitals from './reportWebVitals';
-import Now from './basics/Now';
+import Courses from './props/Courses';
+import CourseList from './props/CourseList';
+
+let courseList = [
+    {title : 'Python', fee : 10000},
+    {title : 'Generative AI', fee : 15000},
+    {title : "AWS", fee : 7500}
+]
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <Now />
+     <CourseList courses = {courseList} />
   </React.StrictMode>
 );
 
