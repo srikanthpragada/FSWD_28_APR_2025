@@ -2,8 +2,9 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
 import reportWebVitals from './reportWebVitals';
-import Courses from './props/Courses';
-import CourseList from './props/CourseList';
+import Persons from './props/Persons';
+import Interest from './forms/Interest';
+import Interest2 from './forms/Interest2';
 
 let courseList = [
     {title : 'Python', fee : 10000},
@@ -11,10 +12,17 @@ let courseList = [
     {title : "AWS", fee : 7500}
 ]
 
+
+let people  = [
+    {id : 1, name : 'Joe Stanger', weight : 80 , height : 190},
+    {id : 2, name : 'Anders Helsberg', weight : 85 , height : 175},
+    {id : 3, name : 'Larry Page', weight : 105 , height : 160}
+]
+
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-     <CourseList courses = {courseList} />
+      <Interest2 />
   </React.StrictMode>
 );
 
