@@ -5,7 +5,7 @@ export default function Interest2() {
 
     function calculateInterest() {
         let amount = document.getElementById("txtAmount").value
-        setInterest(amount * 12 / 100)
+        setInterest(amount * 11 / 100)
     }
 
     return (

@@ -5,6 +5,9 @@ import reportWebVitals from './reportWebVitals';
 import Persons from './props/Persons';
 import Interest from './forms/Interest';
 import Interest2 from './forms/Interest2';
+import Counter from './state/Counter';
+import PersonCC from './props/PersonCC';
+import Skills from './state/Skills';
 
 let courseList = [
     {title : 'Python', fee : 10000},
@@ -22,7 +25,7 @@ let people  = [
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-      <Interest2 />
+      <Skills />
   </React.StrictMode>
 );
 
