@@ -5,17 +5,21 @@ export default function Skills() {
 
     function addSkill() {
         let skill = document.getElementById("txtSkill").value
-        setSkills([...skills, skill])
+        if (skills.includes(skill))
+            alert("Duplicate Skill!")
+        else
+            setSkills([...skills, skill])
     }
 
     function deleteSkill(idxToDelete) {
-        setSkills(skills.filter((s, idx) => idx !== idxToDelete))
+        if (window.confirm('Do you really want to delete?'))
+            setSkills(skills.filter((s, idx) => idx !== idxToDelete))
     }
 
     return (
         <>
             <h1>Skills</h1>
-            Skill <input type="text" id="txtSkill" />
+            Skill <input type="text" id="txtSkill" /> 
             <button onClick={addSkill}>Add</button>
             <p></p>
             <ul>
@@ -23,7 +27,7 @@ export default function Skills() {
                     skills.map(
                         (s, idx) =>
                             <li key={idx}>
-                                {s} <button onClick={() => deleteSkill(idx)}>Del </button>
+                                {s} <button onClick={() => deleteSkill(idx)}> Del </button>
                             </li>
                     )
                 }
