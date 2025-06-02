@@ -13,11 +13,12 @@ function AddSkill({ skills, addSkill }) {
            setMessage("Duplciate Skill!")
        else
        {
-           addSkill(skill)
+           addSkill(skill) // call function of parent comp.
            setMessage("")
        }
     }
 
+    /*
     // Two-way data-binding 
     function updateName(e) {
         setSkill ( { ... skill, name : e.target.value})
@@ -28,16 +29,24 @@ function AddSkill({ skills, addSkill }) {
         setSkill ( { ... skill, rating : e.target.value})
     }
 
+    */
+   
+    // Two-way data-binding 
+    function updateText(e) {
+        setSkill ( { ... skill, [e.target.name] : e.target.value})
+    }
+
     return (
         <>
             <h3>Add Skill</h3>
             <form onSubmit={addNewSkill}>
                 Skill <br />
-                <input type="text" value={skill.name} onChange={updateName} required />
+                <input type="text" name="name" value={skill.name} onChange={updateText} required />
                 &nbsp; <span className="text-danger text-bold">{message}</span>
                 <p></p>
                 Rating <br />
-                <input type="number" min="1" max="5" value={skill.rating} onChange = {updateRating} required />
+                <input type="number" name="rating" min="1" max="5" value={skill.rating} 
+                       onChange = {updateText} required />
                 <p></p>
                 <button>Add</button>
             </form>
