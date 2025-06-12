@@ -23,7 +23,7 @@ content-type: application/json
 {
      "title": "New new thing",   
      "author": "Micheal Lewis",
-     "price": 1200
+     "price" : 500
 }
 
 // Post new book with error 
@@ -38,7 +38,7 @@ content-type: application/json
 
 
 // Update a book
-PUT http://localhost:8888/books/14 HTTP/1.1
+PUT http://localhost:8888/books/16 HTTP/1.1
 content-type: application/json
 
 {
@@ -49,4 +49,4 @@ content-type: application/json
 
 
 //Delete a book
-DELETE http://localhost:8888/books/12 HTTP/1.1
+DELETE http://localhost:8888/books/7 HTTP/1.1

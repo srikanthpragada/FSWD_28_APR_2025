@@ -1,4 +1,4 @@
-var express = require('express');
+//var express = require('express');
 var db = require("./booksDatabase")
 
 async function getBooks(req,res) {
@@ -106,6 +106,9 @@ async function getAuthorsBooksCount(req, res) {
 function validateBook(book) {
   if (!book.title || !book.author || !book.price)
     return false
+  if (book.price < 0)
+    return false 
+  
   return true
 }
 
