@@ -63,7 +63,7 @@ export default function EditBook() {
                 <p></p>
 
                 Price <br />
-                <input type="number" value={book.price} onChange={changeValue} name="price" />
+                <input type="number"  min='0' value={book.price} onChange={changeValue} name="price" />
                 <p></p>
                 <button>Update Book</button>
                 &nbsp;

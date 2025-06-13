@@ -15,7 +15,7 @@ export default function AddBook() {
       {
         url: BOOKS_URL,
         method: 'post',
-        data: JSON.stringify(book),
+        data: JSON.stringify(book), // convert JS to JSON
         contentType: 'application/json; charset=utf-8',
         success: function () {
           alert("Book added successfully!")
